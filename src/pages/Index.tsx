@@ -3,6 +3,18 @@ import { CSVUpload } from '@/components/CSVUpload';
 import { DataTable } from '@/components/DataTable';
 import { DataSlider } from '@/components/DataSlider';
 import { toast } from '@/hooks/use-toast';
+import { ForceGraph } from '@/components/ForceGraph';
+
+const nodes = [
+  { id: "Alice" },
+  { id: "Bob" },
+  { id: "Carol" }
+];
+
+const links = [
+  { source: "Alice", target: "Bob" },
+  { source: "Bob", target: "Carol" }
+];
 
 const Index = () => {
   const [csvData, setCsvData] = useState<string[][]>([]);
@@ -88,8 +100,9 @@ const Index = () => {
           />
         )}
 
-        <div class="image-container">
-            <img src="data/graph.png" alt="Static Graph" />
+        <div>
+          <h1>My Force-Directed Graph</h1>
+          <ForceGraph nodes={nodes} links={links} width={800} height={600} />
         </div>
 
         {/* Data Table */}

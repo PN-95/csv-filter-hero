@@ -9,6 +9,9 @@ COPY package*.json ./
 
 # Install dependencies
 RUN npm install
+RUN npm install d3
+RUN npm install --save-dev @types/d3
+
 
 # Copy the rest of the source code
 COPY . .
