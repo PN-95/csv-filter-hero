@@ -140,4 +140,11 @@ All colors MUST be HSL.
   .slider-track {
     background: var(--gradient-primary);
   }
+
+  .image-container {
+    display: flex;
+    justify-content: center; /* horizontal */
+    height: 200px;          /* optional, for vertical centering */
+  }
+
 }

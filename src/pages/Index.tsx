@@ -88,6 +88,10 @@ const Index = () => {
           />
         )}
 
+        <div class="image-container">
+            <img src="data/graph.png" alt="Static Graph" />
+        </div>
+
         {/* Data Table */}
         <DataTable 
           data={csvData} 
