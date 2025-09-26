@@ -7,6 +7,7 @@ import { toast } from '@/hooks/use-toast';
 const Index = () => {
   const [csvData, setCsvData] = useState<string[][]>([]);
   const [filterRange, setFilterRange] = useState<[number, number]>([0, 0]);
+  const [columnFilters, setColumnFilters] = useState<Record<number, string[]>>({});
 
   // Get unique values from first column (excluding header)
   const uniqueFirstColumnValues = useMemo(() => {
@@ -14,23 +15,35 @@ const Index = () => {
     return csvData.slice(1).map(row => row[0]).filter((value, index, self) => self.indexOf(value) === index);
   }, [csvData]);
 
-  // Create filtered data based on slider range
+  // Create filtered data based on slider range and column filters
   const filteredData = useMemo(() => {
     if (csvData.length === 0) return [];
     
     const header = csvData[0];
     const dataRows = csvData.slice(1);
     
-    const filteredRows = dataRows.filter((row, index) => {
+    // Apply range filter first
+    let filteredRows = dataRows.filter((row, index) => {
       return index >= filterRange[0] && index <= filterRange[1];
     });
     
+    // Apply column filters
+    Object.entries(columnFilters).forEach(([columnIndex, selectedValues]) => {
+      if (selectedValues.length > 0) {
+        const colIndex = parseInt(columnIndex);
+        filteredRows = filteredRows.filter(row => 
+          selectedValues.includes(row[colIndex])
+        );
+      }
+    });
+    
     return [header, ...filteredRows];
-  }, [csvData, filterRange]);
+  }, [csvData, filterRange, columnFilters]);
 
   const handleFileUpload = (data: string[][]) => {
     setCsvData(data);
     setFilterRange([0, Math.max(0, data.length - 2)]);
+    setColumnFilters({}); // Clear column filters when new data is uploaded
     toast({
       title: "CSV Uploaded",
       description: `Successfully loaded ${data.length - 1} rows of data`,
@@ -39,6 +52,13 @@ const Index = () => {
 
   const handleFilterChange = (value: [number, number]) => {
     setFilterRange(value);
+  };
+
+  const handleColumnFilterChange = (columnIndex: number, selectedValues: string[]) => {
+    setColumnFilters(prev => ({
+      ...prev,
+      [columnIndex]: selectedValues
+    }));
   };
 
   return (
@@ -69,7 +89,12 @@ const Index = () => {
         )}
 
         {/* Data Table */}
-        <DataTable data={csvData} filteredData={filteredData} />
+        <DataTable 
+          data={csvData} 
+          filteredData={filteredData}
+          columnFilters={columnFilters}
+          onColumnFilterChange={handleColumnFilterChange}
+        />
       </div>
     </div>
   );
