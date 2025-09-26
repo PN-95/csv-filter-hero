@@ -5,6 +5,7 @@ Install docker on your system.
 Run the following commands to build and run the docker container:
 
 docker build -t my-lovable-app .
+
 docker run -it -p 8080:8080 my-lovable-app
 
 Automatic description from Lovable below.
