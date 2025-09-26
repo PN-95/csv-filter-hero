@@ -20,9 +20,9 @@ docker run -it -p 8080:8080 my-lovable-app
 
 6) You should see a website which is titled "CSV Data Viewer"
 
-7) Download the example file: https://github.com/Swiss-ai-Weeks/Mine-the-Gap/blob/fdf4cc8e6e47e74e9bd0a38ea93833dd13b21f2c/data/edge_events_clean.csv
+7) Download the example file: https://github.com/PN-95/csv-filter-hero/blob/8f999d82b4b9d054717c355cac91a1493ebad66a/data/edge_events_clean-atomized.csv
 
-8) Click the "Upload CSV" button and provide the "Data/edge_events_clean.csv" file from the above mentioned Swisscom challenge repository.
+8) Click the "Upload CSV" button and provide the "data/edge_events_clean.csv" file from the above mentioned repository.
 
 9) Now you can use the slider and filters to browse through the data
 
