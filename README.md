@@ -6,11 +6,15 @@ Here are the steps to get started:
 2) Open your IDE (e.g. VS Code), clone the project and make sure your terminal is pointing to the main project folder
 3) Build the docker container by running the following command in the terminal:
 
+```sh
 docker build -t my-lovable-app .
+```
 
 4) Run the docker container by executing the following command in the terminal:
 
+```sh
 docker run -it -p 8080:8080 my-lovable-app
+```
 
 5) In the terminal you should see "http://localhost:8080/". Click on it (you may need to click the "cmd" key on a Mac), so it opens in the browser.
 
