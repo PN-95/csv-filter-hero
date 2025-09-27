@@ -7,20 +7,20 @@ Here are the steps to get started:
 3) Build the docker container by running the following command in the terminal:
 
 ```sh
-docker build -t my-lovable-app .
+docker build -t lovable-ui-csv-table-slider-filter .
 ```
 
 4) Run the docker container by executing the following command in the terminal:
 
 ```sh
-docker run -it -p 8080:8080 my-lovable-app
+docker run -it -p 8080:8080 lovable-ui-csv-table-slider-filter
 ```
 
 5) In the terminal you should see "http://localhost:8080/". Click on it (you may need to click the "cmd" key on a Mac), so it opens in the browser.
 
 6) You should see a website which is titled "CSV Data Viewer"
 
-7) Download the example file: https://github.com/PN-95/csv-filter-hero/blob/8f999d82b4b9d054717c355cac91a1493ebad66a/data/edge_events_clean-atomized.csv
+7) Download the example file: https://github.com/PN-95/lovable-UI-csv-table-slider-filter/blob/2381d75dc3afdacc0b4a1b1c3f9be6da58b924a3/data/edge_events_clean-atomized.csv
 
 8) Click the "Upload CSV" button and provide the "data/edge_events_clean.csv" file from the above mentioned repository.
 
