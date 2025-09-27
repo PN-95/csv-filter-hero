@@ -7,13 +7,13 @@ Here are the steps to get started:
 3) Build the docker container by running the following command in the terminal:
 
 ```sh
-docker build -t lovable-ui-csv-table-slider-filter .
+docker build -t mine-the-gap-ui .
 ```
 
 4) Run the docker container by executing the following command in the terminal:
 
 ```sh
-docker run -it -p 8080:8080 lovable-ui-csv-table-slider-filter
+docker run -it -p 8080:8080 mine-the-gap-ui
 ```
 
 5) In the terminal you should see "http://localhost:8080/". Click on it (you may need to click the "cmd" key on a Mac), so it opens in the browser.
