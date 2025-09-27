@@ -101,7 +101,7 @@ const Index = () => {
         )}
 
         <div>
-          <h1>My Force-Directed Graph</h1>
+          <h1>Force-Directed Graph (D3)</h1>
           <ForceGraph nodes={nodes} links={links} width={800} height={600} />
         </div>
 
