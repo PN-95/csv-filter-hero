@@ -20,7 +20,7 @@ docker run -it -p 8080:8080 lovable-ui-csv-table-slider-filter
 
 6) You should see a website which is titled "CSV Data Viewer"
 
-7) Download the example file: https://github.com/PN-95/lovable-UI-csv-table-slider-filter/blob/2381d75dc3afdacc0b4a1b1c3f9be6da58b924a3/data/edge_events_clean-atomized.csv
+7) Download the example file: https://github.com/PN-95/mine-the-gap-ui/blob/3eef69e28641bd06453711f83c519b373041eac3/data/edge_events_clean-atomized.csv
 
 8) Click the "Upload CSV" button and provide the "data/edge_events_clean.csv" file from the above mentioned repository.
 
